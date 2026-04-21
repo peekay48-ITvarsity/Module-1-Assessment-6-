@@ -1,0 +1,97 @@
+/* GLOBAL STYLES START */
+/* For all the content in our pages I remove the default margin and padding, setting the font to first
+    pick the user's system font or fall to sans-serif. I also used the box-sizing: border-box property to
+    control how the width and height of elements are calculated, 
+    particularly in relation to their borders and padding. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+/* GLOBAL STYLES END */
+.product {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+/* We want the Images and Text contect to have equal columns */
+.product >* {
+    flex: 1;
+}
+.container {
+    padding: 30px 20px;
+}
+.container h1 {
+    text-align: center;
+}
+/* Product Images Start */
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.images  .large {
+    width: 70%;
+}
+.images ul {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+}
+/* If we hover over our list item, we want the image to change it's size */
+.images ul li:hover img {
+    transform: scale(1.1);
+}
+/* Product images End */
+.description >* {
+    margin-top: 30px;
+}
+.description span {
+    font-weight: bolder;
+}
+.description p span {
+    font-size: 20px;
+    text-decoration: underline;
+    line-height: 55px;
+}
+/* Buy Button */
+/* We want the button to take the entire given width in our flex column. Removed the default border */
+.description button {
+    width: 100%;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: larger;
+    cursor: pointer;
+    background-color: rgb(111, 226, 255);
+    border: 0;
+}
+/* TABLE START */
+table {
+    margin-top: 40px;
+    border: 1px solid;
+    border-collapse: collapse; 
+}
+table td {
+    border: 1px solid;
+    padding: 10px;
+    border-collapse: collapse; 
+}
+th {
+    padding: 10px;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+}
+/* TABLE END */
+/* If the max-width is <= 800px we change the direction of our flex to column
+   to ensure that our content fits in small screen */
+@media screen and (max-width: 800px) {
+    .product {
+        flex-direction: column;
+    }
+}
